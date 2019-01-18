@@ -1,6 +1,6 @@
 
   var config = {
-    apiKey: "AIzaSyAfWoTMK6irqaQQFWMlzfTfxHT6RyrEPKE",
+   
     authDomain: "registration-c0803.firebaseapp.com",
     databaseURL: "https://registration-c0803.firebaseio.com",
     projectId: "registration-c0803",
@@ -83,55 +83,4 @@
     console.log(snapshot.val());
   
 });
- //    // this is listed out each register information
-
-
-   // Initialize Firebase
-  // var config = {
-  //   apiKey: "AIzaSyAfWoTMK6irqaQQFWMlzfTfxHT6RyrEPKE",
-  //   authDomain: "registration-c0803.firebaseapp.com",
-  //   databaseURL: "https://registration-c0803.firebaseio.com",
-  //   projectId: "registration-c0803",
-  //   storageBucket: "",
-  //   messagingSenderId: "800851598663"
-  // };
-  // firebase.initializeApp(config);
-
-  //  // reference messages collection
-  //  var registrationInfo = firbase.database().ref('registration');
-  // //Listen for form submit
-  // document.getElementById('registration').addEventListener('submit', submitForm);
-  //  // submit form
-  // function submitForm(e) {
-  //   e.preventDefault();
-
-  //      // Get Values
-
-  //    var firstName = getInputVal('firstName');
-  //    var lastName = getInputVal('lastName');
-  //    var age = getInputVal('age');
-  //    var address = getInputVal('address');
-  //    var zipCode = getInputVal('zipCode');
-  //    var email = getInputVal('email');
-  //    // save message
-  //    studentInfo(firstName, lastName,age,address,zipCode,email);
-
-  // }
-  // // function to get form values
-  // function getInputVal(id){
-  //   return document.getElementById(id).value;
-  // }
-
-  // //save registration to firebase
-
-  // function studentInfo(firstName, lastName,age,address,zipCode,email){
-  //   var newRegistrationRef = registrationInfo.push();
-  //   newRegistrationRef.set({
-  //      inputFirstName:inputFirstName,
-  //       inputLastName:inputLastName,
-  //       inputAge:inputAge,
-  //       inputAddress:inputAddress,
-  //       inputZipCode:inputZipCode,
-  //       inputEmail:inputEmail
-  //   });
-  // }
+ 
