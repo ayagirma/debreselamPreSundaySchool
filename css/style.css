@@ -1,0 +1,360 @@
+/* ============================================================
+   Debre Selam — Pre Sunday School
+   Design tokens first, then components. Keeps the original
+   look while making colors/spacing easy to adjust in one place.
+   ============================================================ */
+
+:root {
+  /* Brand palette */
+  --brand-brown:    #684931;
+  --brand-brown-dk: #6F4E36;
+  --gold:           #EEC856;
+  --gold-soft:      #E0E6AE;
+  --red:            #E15D5F;
+  --teal:           #279182;
+
+  /* Section backgrounds */
+  --sand:           #E4D29D;
+  --sand-dark:      #CDAE50;
+  --green-light:    #EEF08A;
+  --green-dark:     #819A2D;
+  --footer-bg:      #586D74;
+
+  /* Typography */
+  --font-body:  "Roboto Slab", Georgia, serif;
+  --font-head:  "Open Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Layout */
+  --nav-height: 50px;
+  --page-pad:   40px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 2em;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  font-weight: 100;
+  margin: 0;
+}
+
+img { max-width: 100%; }
+
+/* Keyboard/accessibility: skip straight to content */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 2000;
+  padding: 10px 16px;
+  background: var(--brand-brown);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 16px;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+  left: 0;
+  color: #fff;
+}
+
+/* ============================================================
+   Header Navigation
+   ============================================================ */
+header .navbar {
+  padding: 5px 0;
+  transition: all .5s ease-out;
+}
+
+header .navbar-default {
+  background-color: transparent;
+  border: none;
+}
+
+header .navbar-default .navbar-nav a {
+  color: #fff;
+  padding: 5px 8px;
+}
+
+header .navbar-default .navbar-nav a:hover {
+  color: var(--red);
+  background: transparent;
+  text-shadow: none;
+}
+
+header .navbar-default .navbar-nav .active a {
+  font-weight: 700;
+  color: var(--gold);
+  background: transparent;
+  border-bottom: 4px solid var(--gold);
+  text-shadow: none;
+}
+
+header .navbar-default .navbar-nav .active a:hover {
+  color: var(--red);
+  background: transparent;
+  text-shadow: none;
+}
+
+/* Navbar brand */
+header .navbar-brand {
+  background: url(../images/cross2.jpg) no-repeat 15px 0;
+  height: auto;
+}
+
+header .navbar-brand h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 400;
+  padding-left: 60px;
+}
+
+header .navbar-brand span.subhead {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6em;
+  font-weight: 100;
+}
+
+/* Navbar toggle (mobile) */
+header .navbar-toggle {
+  background-color: var(--teal);
+}
+
+header .navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  header .navbar-collapse.in {
+    background-color: rgba(0, 0, 0, .3);
+  }
+}
+
+/* Nav in-body (scrolled) */
+header .navbar-fixed-top {
+  background: rgba(104, 73, 49, .9);
+}
+header .navbar .navbar-fixed-top {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+header.navbar .inbody .navbar-nav {
+  padding-top: 5px;
+}
+
+header.navbar-brand {
+  background-size: 43px;
+  background-position: top left;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-left: 10px;
+}
+header.inbody .navbar-brand h1 {
+  font-size: 1.1em;
+  padding-left: 38px;
+}
+header .inbody .navbar-brand span.subhead {
+  display: none;
+}
+
+/* ============================================================
+   Carousel (crossfade)
+   ============================================================ */
+.carousel.fade { opacity: 1; }
+
+.carousel.fade .item {
+  transition: opacity ease-out .7s;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+.carousel.fade .item:first-child {
+  top: auto;
+  opacity: 0;
+  position: relative;
+}
+.carousel.fade .item.active { opacity: 1; }
+
+/* Hide arrows unless hovered/focused */
+.carousel-control { opacity: 0; transition: opacity .3s; }
+.carousel:hover .carousel-control,
+.carousel-control:focus { opacity: .8; }
+
+.carousel-control.right,
+.carousel-control.left { background-image: none; }
+
+#vision .item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   Content sections
+   ============================================================ */
+.page { padding: var(--page-pad) 0; }
+.page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Mission */
+#mission {
+  background-color: var(--sand);
+  background-image: linear-gradient(to bottom, var(--green-light), var(--green-dark));
+  border-top: 20px solid rgba(238, 200, 86, .5);
+}
+@media only screen and (min-width: 450px) and (max-width: 980px) {
+  #mission p { margin: 15px 0 0 15px; }
+  .service p { padding: 0 20%; }
+}
+
+/* Services */
+#services {
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(to bottom, #8B4513, var(--gold));
+}
+#services img.icon {
+  display: block;
+  width: 80px;
+  margin: 0 auto 15px;
+}
+#services h3 { margin-bottom: 10px; }
+.service { margin-bottom: 20px; }
+
+/* Registration form */
+.container .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.form-group #inputEmail { padding-top: 5px; }
+.form-status {
+  margin-top: 12px;
+  font-size: .6em;
+  font-family: var(--font-head);
+  min-height: 1em;
+}
+.form-status.is-error   { color: #a94442; }
+.form-status.is-success { color: #2e7d32; }
+
+/* Staff */
+#staff {
+  background-color: var(--sand);
+  background-image: linear-gradient(to bottom, var(--sand), var(--sand-dark));
+}
+.instructors { margin: 10px 0; }
+.instructors h3 {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: var(--brand-brown-dk);
+  padding-bottom: 5px;
+}
+.instructors p { font-size: .8em; }
+.instructors img { width: 100%; }
+
+/* ============================================================
+   Testimonials
+   ============================================================ */
+#testimonials { padding: 0; }
+#testimonials h2 { display: none; }
+
+#testimonials blockquote {
+  background-color: rgba(255, 255, 255, .6);
+  margin: 0;
+  padding: 0;
+  border-left: none;
+  min-height: 500px;
+  position: relative;
+}
+#testimonials blockquote .quote {
+  background-color: rgba(255, 255, 255, .6);
+  padding: 20px 5%;
+  position: absolute;
+  bottom: 0;
+  width: 75%;
+  font-weight: 400;
+  border-radius: 0 50px 0 0;
+  transition: background-color .3s;
+}
+#testimonials blockquote .quote:hover {
+  background-color: rgba(239, 240, 196, .9);
+}
+
+#testimonials #parent1 { background: url(../images/testimonial-parent1.jpg) no-repeat center center; background-size: cover; }
+#testimonials #parent2 { background: url(../images/testimonial-parent4.jpg) no-repeat center center; background-size: cover; }
+#testimonials #parent3 { background: url(../images/testimonial-parent2.jpg) no-repeat center center; background-size: cover; }
+#testimonials #parent4 { background: url(../images/testimonial-parent3.jpg) no-repeat center center; background-size: cover; }
+
+#testimonials .quote {
+  font-size: 1.2em;
+  line-height: 110%;
+  font-weight: 400;
+}
+#testimonials .quote .more,
+#testimonials .quote .theParent {
+  display: none;
+}
+#testimonials .quote:hover .more {
+  font-family: var(--font-head);
+  font-weight: 100;
+  display: block;
+  opacity: 1;
+  font-size: .8em;
+  line-height: 120%;
+}
+#testimonials .quote:hover .theParent {
+  display: block;
+  font-size: .7em;
+  text-align: right;
+}
+#testimonials .quote .intro::after { content: '...'; }
+#testimonials .quote:hover .intro::after { content: ''; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  background: var(--footer-bg);
+  color: #fff;
+  font-size: .8em;
+  padding: 20px 0 40px 0;
+}
+footer a { color: var(--gold-soft); }
+footer a:hover { color: var(--gold) !important; }
+
+footer .phone {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--gold-soft);
+}
+footer .navbar {
+  margin-bottom: 0;
+  min-height: 0;
+}
+footer .navbar-default {
+  background-color: transparent;
+  border: none;
+  margin-right: 40px;
+}
+footer .navbar-nav > li a {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: underline;
+  color: var(--gold) !important;
+}
