@@ -1,39 +1,20 @@
 /* ============================================================
-   Registration form -> Firebase Realtime Database
-   Fails gracefully if Firebase config/API key is not present,
-   so the rest of the site keeps working.
+   Registration form -> email (mailto)
+   No backend, no API keys. When the visitor submits, their email
+   app opens with the registration details pre-filled, addressed
+   to the school. They just press "Send".
    ============================================================ */
 
 $(function () {
   "use strict";
 
-  // Firebase config. Provide "apiKey" here to enable submissions.
-  // (The apiKey is intentionally omitted from source control.)
-  var config = {
-    // apiKey: "YOUR_API_KEY",
-    authDomain:        "registration-c0803.firebaseapp.com",
-    databaseURL:       "https://registration-c0803.firebaseio.com",
-    projectId:         "registration-c0803",
-    storageBucket:     "registration-c0803.appspot.com",
-    messagingSenderId: "800851598663"
-  };
+  // ------------------------------------------------------------
+  // CHANGE THIS to the church / school email address that should
+  // receive registrations. This is the only setting you need.
+  // ------------------------------------------------------------
+  var RECIPIENT_EMAIL = "registrations@example.com";
 
-  var $status  = $("#formStatus");
-  var database = null;
-  var firebaseReady = false;
-
-  // Initialise Firebase only when it is available AND configured.
-  if (typeof firebase !== "undefined" && config.apiKey) {
-    try {
-      firebase.initializeApp(config);
-      database = firebase.database();
-      firebaseReady = true;
-    } catch (err) {
-      console.warn("Firebase failed to initialise:", err);
-    }
-  } else {
-    console.info("Firebase not configured — registration submissions are disabled.");
-  }
+  var $status = $("#formStatus");
 
   function setStatus(message, type) {
     $status.removeClass("is-error is-success");
@@ -41,54 +22,42 @@ $(function () {
     $status.text(message || "");
   }
 
-  // Handle form submission
   $("#registrationForm").on("submit", function (event) {
     event.preventDefault();
 
-    var student = {
-      firstName: $("#inputFirstName").val().trim(),
-      lastName:  $("#inputLastName").val().trim(),
-      age:       $("#inputAge").val().trim(),
-      address:   $("#inputAddress").val().trim(),
-      city:      $("#inputCity").val().trim(),
-      email:     $("#inputEmail").val().trim()
+    var data = {
+      "Name / ስም":            $("#inputFirstName").val().trim(),
+      "Last Name / የአያት ስም":  $("#inputLastName").val().trim(),
+      "Age / እድሜ":            $("#inputAge").val().trim(),
+      "Address / አድራሻ":       $("#inputAddress").val().trim(),
+      "City / ከተማ":           $("#inputCity").val().trim(),
+      "Parent E-mail / ኢ-ሜል": $("#inputEmail").val().trim()
     };
 
-    if (!student.firstName || !student.lastName || !student.email) {
+    // Basic validation
+    if (!data["Name / ስም"] || !data["Last Name / የአያት ስም"] || !data["Parent E-mail / ኢ-ሜል"]) {
       setStatus("Please fill in name and email. / እባክዎ ስምና ኢ-ሜል ይሙሉ።", "is-error");
       return;
     }
 
-    if (!firebaseReady) {
-      setStatus("Registration is temporarily unavailable. Please call us. / ምዝገባ ለጊዜው አይሰራም፤ ይደውሉልን።", "is-error");
-      return;
-    }
+    // Build the email
+    var childName = (data["Name / ስም"] + " " + data["Last Name / የአያት ስም"]).trim();
+    var subject = "New Sunday School Registration — " + childName;
+    var body = "New registration / አዲስ ምዝገባ\n" +
+               "--------------------------------\n";
+    Object.keys(data).forEach(function (label) {
+      body += label + ": " + (data[label] || "-") + "\n";
+    });
 
-    student.dateAdded = firebase.database.ServerValue.TIMESTAMP;
+    var mailto = "mailto:" + encodeURIComponent(RECIPIENT_EMAIL) +
+                 "?subject=" + encodeURIComponent(subject) +
+                 "&body=" + encodeURIComponent(body);
 
-    database.ref("students").push(student)
-      .then(function () {
-        setStatus("Thank you! Registration received. / እናመሰግናለን! ተመዝግቧል።", "is-success");
-        $("#registrationForm")[0].reset();
-      })
-      .catch(function (err) {
-        console.error(err);
-        setStatus("Something went wrong. Please try again. / ችግር ተፈጥሯል፤ እባክዎ እንደገና ይሞክሩ።", "is-error");
-      });
+    // Open the visitor's email app
+    window.location.href = mailto;
+
+    setStatus("Opening your email app… please press Send. / የኢሜል መተግበሪያዎ እየተከፈተ ነው፤ Send ይጫኑ።", "is-success");
+    this.reset();
   });
-
-  // Show the most recently added student
-  if (firebaseReady) {
-    database.ref("students").orderByChild("dateAdded").limitToLast(1)
-      .on("child_added", function (snapshot) {
-        var s = snapshot.val() || {};
-        $("#firstNameDisplay").text(s.firstName || "");
-        $("#lastNameDisplay").text(s.lastName || "");
-        $("#ageDisplay").text(s.age || "");
-        $("#addressDisplay").text(s.address || "");
-        $("#cityDisplay").text(s.city || "");
-        $("#emailDisplay").text(s.email || "");
-      });
-  }
 
 });

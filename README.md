@@ -40,22 +40,20 @@ python3 -m http.server 8000
 - **Carousel images** are the `images/carousel-*.jpg` files listed inside the
   `#vision` block of `index.html`.
 
-## Registration form (Firebase)
+## Registration form (email)
 
-`js/app.js` posts submissions to a Firebase Realtime Database. For security the
-Firebase **API key is not committed**. To enable submissions, add your key to
-the `config` object in `js/app.js`:
+`js/app.js` handles the registration form by opening the visitor's email app
+with all the details pre-filled — no backend, database, or API key required.
+
+To choose which address receives registrations, edit **one line** at the top of
+`js/app.js`:
 
 ```js
-var config = {
-  apiKey: "YOUR_API_KEY",
-  // …rest of config
-};
+var RECIPIENT_EMAIL = "registrations@example.com"; // <- change this
 ```
 
-Until a key is provided, the form validates input and shows a friendly
-"temporarily unavailable" message instead of erroring — the rest of the site is
-unaffected.
+When a visitor fills the form and presses **Submit**, their email client opens a
+new message addressed to that email; they just press **Send**.
 
 ## Notes
 

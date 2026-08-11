@@ -253,6 +253,11 @@ header .inbody .navbar-brand span.subhead {
 .form-status.is-error   { color: #a94442; }
 .form-status.is-success { color: #2e7d32; }
 
+/* Registration info panel (right column) */
+.reg-info { font-size: .5em; line-height: 1.4; }
+.reg-info .phone { font-size: 1.4em; font-weight: 700; }
+.reg-info hr { margin: 12px 0; }
+
 /* Staff */
 #staff {
   background-color: var(--sand);
