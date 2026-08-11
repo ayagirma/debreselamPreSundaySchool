@@ -10,7 +10,7 @@
   <meta name="description" content="የደብረሰላም የኢትዮጵያ ኦርቶዶክስ ተዋህዶ ቤተክርስቲያን የቅድመ ሰንበት ትምህርት ቤት (ዴንቨር፣ ኮሎራዶ) — ለህጻናትና ወጣቶች ትምህርተ ሃይማኖት፣ የቋንቋ፣ የመዝሙርና የባህል ትምህርት። Ethiopian Orthodox Tewahedo Church Sunday School in Denver, Colorado.">
   <meta name="keywords" content="Ethiopian Orthodox, Tewahedo, Sunday School, ደብረሰላም, Denver, Colorado, ቅድመ ሰንበት ትምህርት ቤት, ትምህርተ ሃይማኖት">
   <meta name="author" content="Debre Selam Ethiopian Orthodox Tewahedo Church">
-  <meta name="theme-color" content="#684931">
+  <meta name="theme-color" content="#6b1f2a">
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website">
@@ -23,293 +23,305 @@
   <link rel="icon" href="images/cross2.jpg">
   <link rel="apple-touch-icon" href="images/cross1.jpg">
 
-  <!-- Bootstrap is vendored locally so the site has no external runtime dependency -->
-  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Helps older browsers apply un-prefixed CSS -->
-  <script src="js/prefixfree.min.js"></script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
   <a href="#mission" class="skip-link">Skip to content</a>
 
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse"
-            aria-expanded="false" aria-controls="collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#vision">
-            <h1>ደብረሰላም የኢትዮጵያ ኦርቶዶክስ<span class="subhead">ተዋህዶ ቤ/ክ&nbsp;&nbsp;&nbsp;ዴንቨር ኮሎራዶ</span></h1>
-          </a>
-        </div> <!-- navbar-header -->
-        <div class="collapse navbar-collapse" id="collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#vision">ርዕይ</a></li>
-            <li><a href="#mission">ዓላማ</a></li>
-            <li><a href="#services">አገልግሎታችን</a></li>
-            <li><a href="#staff">መመህራን</a></li>
-            <li><a href="#testimonials">የወላጆች አስተያየት</a></li>
-            <li><a href="#registration">ለመመዝገብ</a></li>
-          </ul>
-        </div> <!-- collapse navbar-collapse -->
-      </div> <!-- container -->
-    </nav>
-
-    <div class="carousel fade" data-ride="carousel" id="vision">
-      <ol class="carousel-indicators"></ol>
-      <div class="carousel-inner fullheight">
-        <div class="item"><img src="images/carousel-dsMassService.jpg" alt="ቅዳሴ በደብረሰላም ቤተክርስቲያን"></div>
-        <div class="item"><img src="images/carousel-dsMassService1.jpg" alt="የቅዳሴ አገልግሎት"></div>
-        <div class="item"><img src="images/carousel-dsPreSundaySchool.jpg" alt="የቅድመ ሰንበት ትምህርት ቤት ተማሪዎች"></div>
-        <div class="item"><img src="images/carousel-dsBaptism.jpg" alt="የጥምቀት ስነ ስርዓት"></div>
-        <div class="item"><img src="images/carousel-dsDecons.jpg" alt="ዲያቆናት በአገልግሎት ላይ"></div>
-      </div> <!-- carousel-inner -->
-
-      <a class="left carousel-control" href="#vision" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+  <!-- ===================== NAV ===================== -->
+  <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="#top">
+        <img src="images/cross1.jpg" alt="">
+        <span class="brand-text">
+          <span class="brand-title">ደብረሰላም ኦርቶዶክስ ተዋህዶ ቤ/ክ</span>
+          <span class="brand-sub">የቅድመ ሰንበት ትምህርት ቤት · ዴንቨር, ኮሎራዶ</span>
+        </span>
       </a>
-      <a class="right carousel-control" href="#vision" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div> <!-- vision carousel -->
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#mission">ዓላማ</a></li>
+        <li><a href="#services">አገልግሎት</a></li>
+        <li><a href="#staff">መምህራን</a></li>
+        <li><a href="#testimonials">አስተያየት</a></li>
+        <li><a class="nav-cta" href="#registration">ለመመዝገብ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="top">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide" style="background-image:url('images/carousel-dsMassService.jpg')" role="img" aria-label="ቅዳሴ በደብረሰላም ቤተክርስቲያን"></div>
+      <div class="hero-slide" style="background-image:url('images/carousel-dsPreSundaySchool.jpg')" role="img" aria-label="የቅድመ ሰንበት ትምህርት ቤት ተማሪዎች"></div>
+      <div class="hero-slide" style="background-image:url('images/carousel-dsBaptism.jpg')" role="img" aria-label="የጥምቀት ስነ ስርዓት"></div>
+      <div class="hero-slide" style="background-image:url('images/carousel-dsMassService1.jpg')" role="img" aria-label="የቅዳሴ አገልግሎት"></div>
+      <div class="hero-slide" style="background-image:url('images/carousel-dsDecons.jpg')" role="img" aria-label="ዲያቆናት በአገልግሎት ላይ"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Ethiopian Orthodox Tewahedo · Denver, Colorado</p>
+      <h1>ተረካቢ ትውልድን በእምነት እናሳድጋለን</h1>
+      <p class="lead">ከ5 እስከ 16 ዓመት ለሆኑ ህጻናትና ወጣቶች ትምህርተ-ሃይማኖት፣ ቋንቋ፣ መዝሙርና ባህል የምናስተምርበት የቅድመ ሰንበት ትምህርት ቤት።</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#registration">ለመመዝገብ / Register</a>
+        <a class="btn btn-ghost" href="#services">አገልግሎታችን</a>
+      </div>
+    </div>
+
+    <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide">&#8249;</button>
+    <button class="hero-arrow next" id="heroNext" aria-label="Next slide">&#8250;</button>
+    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slides"></div>
   </header>
 
-  <main class="main">
-    <section class="page" id="mission">
-      <div class="content container">
-        <h2>የክፍሉ-ዓላማ / Our Mission</h2>
-        <div class="row">
-          <p class="col-md-5 col-md-offset-1">የህጻናት ክፍሉ ዓላማ የቤተክርስቲያን ተረካቢ ትውልድን ማዘጋጀት ነው። በአጥቢያችን በትውልድ ኢትዮጵያዊም ሆነ አሜሪካዊ የሆኑ አዳጊያን ህጻናትን ከ5 ዓመት ጀምሮ እስከ 16 ዓመት በመቀበል በየእድሜ ክልልላቸው በመለየት የቤተክርስቲያን ትምህርተ-ሃይማኖት፤ ቀኖና ቤተክርስቲያን፤ እንዲሁም ባህልና ቋንቋቸውን እናስተምራለን። ይህ አግልግሎት በተጠናከር መልኩ ከባለድርሻ አካላት ጋር በመተባበር ቤተክርስቲያን ያለምንም ችግር ተተኪ ትውልድ በቀጣይነት ያለማቋረጥ እንዲኖራት ማድረግ ነው። የህጻናቱን ለውጥ በአይን ተመልከተናል ብዙ ወላጆችም የአይን ምስክር ናቸው። ይህን ሰፊ ስራ የሚጠይቅ እንቅስቃሴ ነው። ስለሆነም ይህን ዓላም የሚደግፍ ማንኛውም ሰው በህጻናቱ ጥበቃና ትምህርት እንዲረዳን በማክበር እንጠይቃለን እግዚአብሔር ይስጥልን!</p>
-          <p class="col-md-5" lang="en">We strive to help the continuity of our church doctrine, belief and tradition pass to our children. We accepted Young children between age 5 years old to 16 years old in our church. According to their age group, we teach our belief, church-doctrine, Language, and tradition. In order to continually increase the number of our congregation adopt an unshakable faith, we must work hard today on our children. We have seen the greatest change in our two-round summer program. We need your help for the continuity of teaching and spiritual growth of our children. God Bless!</p>
-        </div> <!-- row -->
-      </div> <!-- content container -->
-    </section><!-- mission page -->
-
-    <!-- SERVICE PAGE -->
-    <section class="page" id="services">
-      <div class="content container">
-        <h2>የክፍሉ-አገልግሎት</h2>
-        <div class="row">
-          <article class="service col-md-4 col-sm-6 col-xs-12">
-            <h3>ባህልና-ታሪክ</h3>
-            <p>በዚህ ዓምድ የሃገራችን የኢትዮጵያ ባህልና ታሪክ በአጭሩ ለማንነት ጥይቄአቸው መልስ የሚሰጥበት እንዲሁም ታሪክ የሚማሩበት ክፍለ ግዜ ነው።</p>
-          </article>
-
-          <article class="service col-md-4 col-sm-6 col-xs-12">
-            <h3>የቋንቋ-ትምህርት</h3>
-            <p>በቋንቋ ትምህርት ክፍል ውስጥ አዳጊያንና ወጣቶች ያሉበት ደረጃን በማጥናት የፊደል ማስቆጠር ፤ ንባብና ጽሁፍ እንዲማሩ የደረጋል።</p>
-          </article>
-
-          <article class="service col-md-4 col-sm-6 col-xs-12">
-            <h3>የመዝሙር-ጥናት</h3>
-            <p>የመዝሙር ጥናት ክፍል አዳጊያንን እንዲሁም ወጣቶችን በየእድሚአ ክልላቸው በመለየት መዝሙር እንዲያጠኑ ያደርጋል። የመዝሙር መሳሪያዎች ትውፊታዊም ሆነ መጽሃፍ ቅዱሳዊ መረጃዎችን በማጣቀስ የኢትዮጵያ ቤ/ክ የምትጠቀምባቸው የመዝሙር መሳሪያዎች የትኞቹ እንደሆኑ ይማራሉ። በተለይም የያሬድያዊ መዝሙርና የአቋቋም ትምህርትን በሚገባ ስልጠና ይሰጣል።</p>
-          </article>
-
-          <article class="service col-md-4 col-sm-6 col-xs-12">
-            <h3>ትምህርተ-ሃይማኖት፡</h3>
-            <p>በትምህርተ-ሃይማኖት ዓምድ የቤተክርስቲያናችን መሠረታዊ የሆኑ ትምህርቶች ለምሳሌ ያህል ሚስጥራተ ቤተክርስቲያን እና ቀኖናተ ቤተ/ክርስቲያን በስፋት ይማራሉ።</p>
-          </article>
-
-          <article class="service col-md-4 col-sm-6 col-xs-12">
-            <h3>ስርዓተ-ቤ/ክርስቲያን</h3>
-            <p>በስርዓተ-ቤክርስቲያን ትምህርት አዳጊያንም ሆኑ ወጣቶች በአጠቃላይ የቤተክርስቲያናችን ስርዓት ከአለባበስ ጀምሮ በየደረጃቸቸው በጥልቀት ይማራሉ።</p>
-          </article>
-
-          <article class="service col-md-4 col-sm-6 col-xs-12">
-            <h3>የቤተሰብ-ግዜ</h3>
-            <p>ይህ ዓምድ ህጻናት ከወላጆቻቸው ጋር በጋራ በመሆን የሚወያዩበት፡ የሚማማሩበት እንዲሁም የህጻናቱን ቤተሰባዊ የቤት-ስራ በመረዳዳት የሚሰሩበት ክፍለ ግዜ ነው።</p>
-          </article>
-        </div> <!-- row -->
-      </div> <!-- content container -->
-    </section><!-- services page -->
-
-    <!-- STAFF PAGE -->
-    <section class="page" id="staff">
-      <div class="container-fluid">
-        <h2 id="ourstaff">የህጻናቱ መምህራን</h2>
-        <div class="row">
-          <div class="instructors col-lg-4">
-            <div class="row">
-              <div class="info col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                <h3>የመዝሙር-ክፍል መምህራን</h3>
-                <p>ወ/ሮ አዜብ</p>
-                <p>ወ/ሮ አዛለች</p>
-                <p>ወ/ሮ የትም</p>
-              </div> <!-- info -->
-            </div> <!-- inner-row -->
-          </div> <!-- instructors -->
-
-          <div class="instructors col-lg-4">
-            <div class="row">
-              <div class="info col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                <h3>የትምህርት-ክፍል መምህራን</h3>
-                <p>አ/ቶ የኔነህ</p>
-                <p>ወ/ሮ መሰረት</p>
-                <p>አ/ቶ ዮሃንስ</p>
-              </div> <!-- info -->
-            </div> <!-- inner-row -->
-          </div> <!-- instructors -->
-
-          <div class="instructors col-lg-4">
-            <div class="row">
-              <div class="info col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                <h3>የክፍል ሃላፊዎች</h3>
-                <p>ወ/ሮ አዛለች</p>
-                <p>ወ/ሮ ውቢት</p>
-                <p>ወ/ሮ ጡርዬ</p>
-              </div> <!-- info -->
-            </div> <!-- inner-row -->
-          </div> <!-- instructors -->
-        </div><!-- outer-row -->
-      </div> <!-- container -->
-    </section> <!-- staff page -->
-
-    <!-- TESTIMONIALS -->
-    <section class="page" id="testimonials">
-      <div class="container-fluid">
-        <h2>የወላጆች አስተያየት</h2>
-        <div class="row">
-          <blockquote class="col-sm-6 col-lg-3" id="parent1">
-            <div class="quote">
-              <span class="intro">የበጋውን ትምህርት መጀመሩን ስማሁኝ!</span>
-              <span class="more"> ጥሩ ጅምር ነው። ሕጻናቱ ላይ መድካም ያዋጣል። አየህ እኛ እዚ ሃገር ስንመጣ ዶላር ለማግኛት ብቻ ስለነበር ድካማችን ገንዘቡንም አልያዝነውም ሆኖም ልጆቻችን አመለጡን። አሁን ቢጠሩ አይሰሙም አይደለም በሃገራቸው መደሰት በባህላቸው መኩራት ቀርቶ ከሃበሻው ጋር መቀላቅሉን አይፈልጉትም። እናም የእኔን መሰሉ ድካም ነው የትውልድ ክፍተት የፈጠረው። እናንተ በርቱ የራሴ ልጆች ባይኖሩኝም የእህቴን ልጆች እያመጣው እንዲማሩ አድርጋለውኝ። ታንኪው!</span>
-              <span class="theParent">አቶ ክብደት ይሰጠኝ</span>
-            </div>
-          </blockquote>
-
-          <blockquote class="col-sm-6 col-lg-3" id="parent2">
-            <div class="quote">
-              <span class="intro">የበጋውን ትምህርት መጀመሩን ቤተክርስቲያን ስማሁኝ!</span>
-              <span class="more"> እናንተ እንኳን በርቱና ትውልዱን አድኑ። እኛ የሰራነው ጉድ እዳ ፍዳ አለብን ጆሮአችን ፖለቲካ ብቻ ነው የሚሰማው። ማን ያውቃል አንድ ቀን ምናልባት እንመለስ ይሆናል ሆኖም የልጆቸ ነገር ስለሚያሳስባኝ ቢያንስ ቋንቋቸውን እንዲማሩ ስል አመጣቸዋለው። በርቱ በማቴሪያልና በገንዘብ ልደግፍ ፈቃደኛ ነኝ።</span>
-              <span class="theParent">አቶ ጭካኔ</span>
-            </div>
-          </blockquote>
-
-          <blockquote class="col-sm-6 col-lg-3" id="parent3">
-            <div class="quote">
-              <span class="intro">የበጋውን ትምህርት መኖሩን አላውቅም ነበር!</span>
-              <span class="more"> አባቴ በስራና በትምህርት ቢዚ ሰለሆነ እቤት አይረዳኝም እናቴም ሁለት ስራ ስለሆነ የምትሰራው ግዜ የላትም። አንዳንድ ግዜ ራይድ የሚሰጥ ሰው ችግር ቢኖርም ቢያንስ በሳምንት 3 ቀናት እማራለውኝ በመሆኑም የቤት ስራዬን የቻልኩትኝን ያህል እሰራለውኝ ሆኖም ስህተት ሁልጊዜ አግኛለውኝ። አንዳንዶቹ ህጻናት በጣም ይረብሻሉ ተው ሲባል አይሰሙም እኔ ግን ቶሎ እሰማለውኝ። አሁን በሚቀጥለው ጎበዝ እንደምሆን የታወቀ ነው እናቴም ግዜ ሰለሚኖራት ትረዳኛለች አባቴን እንኳን መቼም አይችልም</span>
-              <span class="theParent">ህጻን ታምኝ በአምላኩ</span>
-            </div>
-          </blockquote>
-
-          <blockquote class="col-sm-6 col-lg-3" id="parent4">
-            <div class="quote">
-              <span class="intro">የበጋውን ትምህርት መጀመሩን ስማሁኝ!</span>
-              <span class="more"> በእውነቱ የሚያስማሰግን ስራ ነው እየተሰራ ያለው። እኔም ሆንኩኝ ልጄ በአገልግሎቱ ተደስተናል። አማርኛ መናገር ቢችልም የመጻፍና የማንበብ ነገር አይቻለውም ነበር። አሁን ትንሽ ይሞክራል በቀጣዩ ዓመት ደግሞ መጻፍና ማንበቡን እንደሚበረታ እምናለው። ከሁሉ በላይ በጋራ መጨዋወታቸው መነጋገራቸው ትልቅ ትሥሥርን ወደፌት ያመጣል። ስለ ድካማችሁ እግዚአብሔር ዋጋችሁን ይክፈላችሁ።</span>
-              <span class="theParent">ወ/ሮ ምን ልናገር ባይ</span>
-            </div>
-          </blockquote>
+  <main>
+    <!-- ===================== MISSION ===================== -->
+    <section class="section" id="mission">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Our Mission</p>
+          <h2>የክፍሉ ዓላማ</h2>
+          <div class="divider"></div>
         </div>
-      </div><!-- container -->
-    </section> <!-- testimonials page -->
-
-    <!-- REGISTRATION -->
-    <section class="page" id="registration">
-      <div class="jumbotron jumbotron-fluid bg-reverse">
-        <div class="container text-center">
-          <h1 class="display-3 mb-4 text-center">የአዳጊያን ህጻናት መረጃ መሰብሰቢያ</h1>
-          <p class="mb-4 text-center">እናስታውስዎ! የአዳጊያን ህጻናት መረጃ ዛሬውኑ በመሙላት ይመዝገቡ ቦታ ሊሞላ ይችላል።</p>
+        <div class="mission-grid reveal">
+          <div>
+            <span class="lang-label">አማርኛ</span>
+            <p>የህጻናት ክፍሉ ዓላማ የቤተክርስቲያን ተረካቢ ትውልድን ማዘጋጀት ነው። በአጥቢያችን በትውልድ ኢትዮጵያዊም ሆነ አሜሪካዊ የሆኑ አዳጊያን ህጻናትን ከ5 ዓመት ጀምሮ እስከ 16 ዓመት በመቀበል በየእድሜ ክልልላቸው በመለየት የቤተክርስቲያን ትምህርተ-ሃይማኖት፤ ቀኖና ቤተክርስቲያን፤ እንዲሁም ባህልና ቋንቋቸውን እናስተምራለን። ይህ አግልግሎት በተጠናከር መልኩ ከባለድርሻ አካላት ጋር በመተባበር ቤተክርስቲያን ያለምንም ችግር ተተኪ ትውልድ በቀጣይነት ያለማቋረጥ እንዲኖራት ማድረግ ነው። የህጻናቱን ለውጥ በአይን ተመልከተናል ብዙ ወላጆችም የአይን ምስክር ናቸው። ይህን ሰፊ ስራ የሚጠይቅ እንቅስቃሴ ነው። ስለሆነም ይህን ዓላም የሚደግፍ ማንኛውም ሰው በህጻናቱ ጥበቃና ትምህርት እንዲረዳን በማክበር እንጠይቃለን እግዚአብሔር ይስጥልን!</p>
+          </div>
+          <div>
+            <span class="lang-label">English</span>
+            <p lang="en">We strive to help the continuity of our church doctrine, belief and tradition pass to our children. We accept young children between age 5 and 16 into our church. According to their age group, we teach our belief, church doctrine, language, and tradition. In order to continually grow a congregation with an unshakable faith, we must work hard today on our children. We have seen the greatest change in our two-round summer program. We need your help for the continuity of teaching and spiritual growth of our children. God Bless!</p>
+          </div>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title text-center">Sign-Up Today!</h3>
-                </div>
-                <div class="panel-body">
-                  <form id="registrationForm" novalidate>
-                    <div class="form-group text-left">
-                      <label for="inputFirstName">Name / ስም</label>
-                      <input type="text" class="form-control" id="inputFirstName" name="firstName"
-                        autocomplete="given-name" required>
-                    </div>
-                    <div class="form-group text-left">
-                      <label for="inputLastName">Last Name / የአያት ስም</label>
-                      <input type="text" class="form-control" id="inputLastName" name="lastName"
-                        autocomplete="family-name" required>
-                    </div>
-                    <div class="form-group text-left">
-                      <label for="inputAge">Age / እድሜ</label>
-                      <input type="number" min="5" max="16" class="form-control" id="inputAge" name="age" required>
-                    </div>
-                    <div class="form-group text-left">
-                      <label for="inputAddress">Address / አድራሻ</label>
-                      <input type="text" class="form-control" id="inputAddress" name="address"
-                        autocomplete="street-address" placeholder="1234 Main St">
-                    </div>
-                    <div class="form-group text-left">
-                      <label for="inputCity">City / ከተማ</label>
-                      <input type="text" class="form-control" id="inputCity" name="city"
-                        autocomplete="address-level2">
-                    </div>
-                    <div class="form-group text-left">
-                      <label for="inputEmail">Parent E-mail / የወላጅ ኢ-ሜል</label>
-                      <input type="email" class="form-control" id="inputEmail" name="email" autocomplete="email"
-                        required>
-                    </div>
+      </div>
+    </section>
 
-                    <button type="submit" class="btn btn-primary" id="addUser">Submit</button>
-                    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-                  </form>
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">What We Teach</p>
+          <h2>የክፍሉ አገልግሎት</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">&#128220;</div>
+            <h3>ባህልና ታሪክ</h3>
+            <p>በዚህ ዓምድ የሃገራችን የኢትዮጵያ ባህልና ታሪክ በአጭሩ ለማንነት ጥያቄአቸው መልስ የሚሰጥበት እንዲሁም ታሪክ የሚማሩበት ክፍለ ግዜ ነው።</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">&#128172;</div>
+            <h3>የቋንቋ ትምህርት</h3>
+            <p>በቋንቋ ትምህርት ክፍል ውስጥ አዳጊያንና ወጣቶች ያሉበት ደረጃን በማጥናት የፊደል ማስቆጠር፣ ንባብና ጽሁፍ እንዲማሩ ይደረጋል።</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">&#127925;</div>
+            <h3>የመዝሙር ጥናት</h3>
+            <p>የመዝሙር ጥናት ክፍል አዳጊያንንና ወጣቶችን በየእድሜ ክልላቸው በመለየት መዝሙር እንዲያጠኑ ያደርጋል። በተለይም የያሬዳዊ መዝሙርና የአቋቋም ትምህርት በሚገባ ስልጠና ይሰጣል።</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">&#10014;</div>
+            <h3>ትምህርተ ሃይማኖት</h3>
+            <p>በትምህርተ-ሃይማኖት ዓምድ የቤተክርስቲያናችን መሠረታዊ ትምህርቶች ለምሳሌ ሚስጥራተ ቤተክርስቲያንና ቀኖናተ ቤተክርስቲያን በስፋት ይማራሉ።</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">&#128591;</div>
+            <h3>ስርዓተ ቤተክርስቲያን</h3>
+            <p>በስርዓተ-ቤተክርስቲያን ትምህርት አዳጊያንም ሆኑ ወጣቶች የቤተክርስቲያናችንን ስርዓት ከአለባበስ ጀምሮ በየደረጃቸው በጥልቀት ይማራሉ።</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">&#128106;</div>
+            <h3>የቤተሰብ ግዜ</h3>
+            <p>ይህ ዓምድ ህጻናት ከወላጆቻቸው ጋር በጋራ በመሆን የሚወያዩበት፣ የሚማማሩበት እንዲሁም ቤተሰባዊ የቤት-ስራን በመረዳዳት የሚሰሩበት ክፍለ ግዜ ነው።</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STAFF ===================== -->
+    <section class="section brand-bg" id="staff">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Our Instructors</p>
+          <h2>የህጻናቱ መምህራን</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="staff-grid">
+          <div class="staff-card reveal">
+            <span class="role-badge">የመዝሙር ክፍል</span>
+            <h3>የመዝሙር ክፍል መምህራን</h3>
+            <ul>
+              <li>ወ/ሮ አዜብ</li>
+              <li>ወ/ሮ አዛለች</li>
+              <li>ወ/ሮ የትም</li>
+            </ul>
+          </div>
+          <div class="staff-card reveal">
+            <span class="role-badge">የትምህርት ክፍል</span>
+            <h3>የትምህርት ክፍል መምህራን</h3>
+            <ul>
+              <li>አ/ቶ የኔነህ</li>
+              <li>ወ/ሮ መሰረት</li>
+              <li>አ/ቶ ዮሃንስ</li>
+            </ul>
+          </div>
+          <div class="staff-card reveal">
+            <span class="role-badge">የክፍል ሃላፊዎች</span>
+            <h3>የክፍል ሃላፊዎች</h3>
+            <ul>
+              <li>ወ/ሮ አዛለች</li>
+              <li>ወ/ሮ ውቢት</li>
+              <li>ወ/ሮ ጡርዬ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Parents' Voices</p>
+          <h2>የወላጆች አስተያየት</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="testi-grid">
+          <figure class="testi reveal">
+            <figcaption class="intro">የበጋውን ትምህርት መጀመሩን ስማሁኝ!</figcaption>
+            <blockquote class="body">ጥሩ ጅምር ነው። ሕጻናቱ ላይ መድከም ያዋጣል። አየህ እኛ እዚ ሃገር ስንመጣ ዶላር ለማግኛት ብቻ ስለነበር ድካማችን ገንዘቡንም አልያዝነውም ሆኖም ልጆቻችን አመለጡን። እናንተ በርቱ የራሴ ልጆች ባይኖሩኝም የእህቴን ልጆች እያመጣው እንዲማሩ አድርጋለውኝ። ታንኪው!</blockquote>
+            <div class="who">አቶ ክብደት ይሰጠኝ</div>
+          </figure>
+          <figure class="testi reveal">
+            <figcaption class="intro">የበጋውን ትምህርት መጀመሩን ቤተክርስቲያን ስማሁኝ!</figcaption>
+            <blockquote class="body">እናንተ እንኳን በርቱና ትውልዱን አድኑ። ማን ያውቃል አንድ ቀን ምናልባት እንመለስ ይሆናል ሆኖም የልጆቼ ነገር ስለሚያሳስበኝ ቢያንስ ቋንቋቸውን እንዲማሩ ስል አመጣቸዋለው። በርቱ በማቴሪያልና በገንዘብ ልደግፍ ፈቃደኛ ነኝ።</blockquote>
+            <div class="who">አቶ ጭካኔ</div>
+          </figure>
+          <figure class="testi reveal">
+            <figcaption class="intro">የበጋውን ትምህርት መኖሩን አላውቅም ነበር!</figcaption>
+            <blockquote class="body">አባቴ በስራና በትምህርት ቢዚ ስለሆነ እቤት አይረዳኝም እናቴም ሁለት ስራ ስለሆነ የምትሰራው ግዜ የላትም። ቢያንስ በሳምንት 3 ቀናት እማራለውኝ በመሆኑም የቤት ስራዬን የቻልኩትን ያህል እሰራለውኝ። አሁን በሚቀጥለው ጎበዝ እንደምሆን የታወቀ ነው።</blockquote>
+            <div class="who">ህጻን ታምኝ በአምላኩ</div>
+          </figure>
+          <figure class="testi reveal">
+            <figcaption class="intro">የበጋውን ትምህርት መጀመሩን ስማሁኝ!</figcaption>
+            <blockquote class="body">በእውነቱ የሚያስመሰግን ስራ ነው እየተሰራ ያለው። እኔም ሆንኩኝ ልጄ በአገልግሎቱ ተደስተናል። አማርኛ መናገር ቢችልም የመጻፍና የማንበብ ነገር አይቻለውም ነበር። አሁን ትንሽ ይሞክራል። ስለ ድካማችሁ እግዚአብሔር ዋጋችሁን ይክፈላችሁ።</blockquote>
+            <div class="who">ወ/ሮ ምን ልናገር ባይ</div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REGISTRATION ===================== -->
+    <section class="section alt" id="registration">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Join Us</p>
+          <h2>የአዳጊያን ህጻናት ምዝገባ</h2>
+          <div class="divider"></div>
+          <p style="margin-top:16px;color:var(--muted)">እናስታውስዎ! የአዳጊያን ህጻናት መረጃ ዛሬውኑ በመሙላት ይመዝገቡ — ቦታ ሊሞላ ይችላል።</p>
+        </div>
+
+        <div class="reg-grid">
+          <div class="form-card reveal">
+            <div class="card-head">ለመመዝገብ / Sign-Up Today</div>
+            <div class="card-body">
+              <form id="registrationForm" novalidate>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="inputFirstName">ስም / Name</label>
+                    <input type="text" id="inputFirstName" name="firstName" autocomplete="given-name" required>
+                  </div>
+                  <div class="field">
+                    <label for="inputLastName">የአያት ስም / Last Name</label>
+                    <input type="text" id="inputLastName" name="lastName" autocomplete="family-name" required>
+                  </div>
                 </div>
-              </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="inputAge">እድሜ / Age</label>
+                    <input type="number" id="inputAge" name="age" min="5" max="16" required>
+                  </div>
+                  <div class="field">
+                    <label for="inputCity">ከተማ / City</label>
+                    <input type="text" id="inputCity" name="city" autocomplete="address-level2">
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="inputAddress">አድራሻ / Address</label>
+                  <input type="text" id="inputAddress" name="address" autocomplete="street-address" placeholder="1234 Main St">
+                </div>
+                <div class="field">
+                  <label for="inputEmail">የወላጅ ኢ-ሜል / Parent E-mail</label>
+                  <input type="email" id="inputEmail" name="email" autocomplete="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="addUser">Submit / ላክ</button>
+                <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+              </form>
             </div>
+          </div>
 
-            <div class="col-lg-6">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title text-center">ስለ ምዝገባ / About Registration</h3>
-                </div>
-                <div class="panel-body reg-info">
-                  <p>ቅጹን ሞልተው <strong>Submit</strong> ሲጫኑ የልጅዎ መረጃ በኢሜል ወደ ትምህርት ቤቱ ይላካል። እባክዎ የኢሜል መተግበሪያዎ ሲከፈት <strong>Send</strong> ይጫኑ።</p>
-                  <p lang="en">When you fill in the form and press <strong>Submit</strong>, your email app opens with the details ready to send to the school — just press <strong>Send</strong>.</p>
-                  <hr>
-                  <p>ጥያቄ ካለዎት ይደውሉልን / Questions? Call us:</p>
-                  <p><a class="phone" href="tel:+17209985335">720-998-5335</a></p>
-                </div>
+          <div class="info-card reveal">
+            <div class="card-head">ስለ ምዝገባ / About Registration</div>
+            <div class="card-body">
+              <p>ቅጹን ሞልተው መላክ ቀላል ነው። መረጃው በኢሜል ወደ ትምህርት ቤቱ ይላካል።</p>
+              <ol class="steps">
+                <li>ቅጹን ይሙሉ / Fill in the form</li>
+                <li><strong>Submit</strong> ይጫኑ / Press Submit</li>
+                <li>የኢሜል መተግበሪያዎ ሲከፈት <strong>Send</strong> ይጫኑ / Press Send</li>
+              </ol>
+              <div class="call">
+                <p>ጥያቄ ካለዎት ይደውሉልን / Questions? Call us:</p>
+                <a class="phone" href="tel:+17209985335">720-998-5335</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> <!-- registration page -->
-  </main> <!-- main -->
+    </section>
+  </main>
 
-  <footer>
-    <div class="content container-fluid">
-      <div class="row">
-        <div class="col-sm-6">
-          <p>Call us at <a class="phone" href="tel:+17209985335">720-998-5335</a></p>
-          <p>All contents &copy; <span id="copyrightYear">2018</span>
-            <a href="http://stayonpath.org">stayonpath.org</a>. All rights reserved.</p>
-        </div> <!-- col-sm-6 -->
-        <div class="col-sm-6">
-          <nav class="navbar navbar-default" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Terms of use</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </nav>
-        </div> <!-- col-sm-6 -->
-      </div><!-- row -->
-    </div> <!-- content container -->
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="f-brand">
+            <img src="images/cross1.jpg" alt="">
+            <strong>ደብረሰላም ኦርቶዶክስ ተዋህዶ</strong>
+          </div>
+          <p>የቅድመ ሰንበት ትምህርት ቤት — ተረካቢ ትውልድን በእምነት፣ በቋንቋና በባህል እናሳድጋለን።</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#mission">ዓላማ</a></li>
+            <li><a href="#services">አገልግሎት</a></li>
+            <li><a href="#staff">መምህራን</a></li>
+            <li><a href="#registration">ለመመዝገብ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="phone-big"><a href="tel:+17209985335" style="color:#fff">720-998-5335</a></p>
+          <p>Denver, Colorado</p>
+          <p><a href="http://stayonpath.org">stayonpath.org</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="copyrightYear">2018</span> Debre Selam Ethiopian Orthodox Tewahedo Church. All rights reserved.</span>
+        <span><a href="#top">Back to top &#8593;</a></span>
+      </div>
+    </div>
   </footer>
 
-  <script src="js/vendor/jquery.min.js"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/myscript.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -2,20 +2,24 @@
 
 Website for the **Debre Selam Ethiopian Orthodox Tewahedo Church** children's
 (Pre–Sunday School) program in Denver, Colorado. It's a static, bilingual
-(Amharic / English) brochure site with an optional online registration form.
+(Amharic / English) single-page site with an online registration form.
+
+The site is **dependency-free at runtime** — no jQuery, no Bootstrap, no CDNs.
+Everything (fonts included) is self-hosted, so it loads fast and never breaks
+because an external service is down.
 
 ## Project structure
 
 ```
 .
-├── index.html          # Single-page site (nav, carousel, sections, footer)
+├── index.html          # Single-page site (nav, hero carousel, sections, footer)
 ├── css/
-│   └── style.css       # Styles, organized around CSS design tokens (:root vars)
+│   ├── style.css       # Design system — palette/type tokens in :root, then components
+│   ├── fonts.css       # @font-face for the self-hosted Ethiopic fonts
+│   └── fonts/          # Noto Serif/Sans Ethiopic woff2 (Ethiopic + Latin subsets)
 ├── js/
-│   ├── myscript.js     # Carousel, scrollspy, smooth-scroll, UI behavior
-│   ├── app.js          # Registration form → Firebase (fails gracefully)
-│   └── prefixfree.min.js
-├── images/             # Carousel, testimonial, and brand images (web-optimized)
+│   └── main.js         # Vanilla JS: carousel, nav, scroll effects, registration form
+├── images/             # Hero, testimonial, and brand images (web-optimized)
 └── README.md
 ```
 
@@ -33,20 +37,19 @@ python3 -m http.server 8000
 
 ## Customizing
 
-- **Colors & fonts** live as variables at the top of `css/style.css`
-  (`:root { --brand-brown … }`). Change them in one place to re-theme the site.
+- **Colors & fonts** — the whole theme is driven by CSS variables at the top of
+  `css/style.css` (`:root { --burgundy … --gold … }`). Change them in one place
+  to re-theme the entire site.
 - **Content** (mission, services, staff, testimonials) is plain HTML in
   `index.html` — edit the text directly.
-- **Carousel images** are the `images/carousel-*.jpg` files listed inside the
-  `#vision` block of `index.html`.
+- **Hero carousel images** are the `images/carousel-*.jpg` files listed inside
+  the `.hero-slides` block of `index.html`.
 
 ## Registration form (email)
 
-`js/app.js` handles the registration form by opening the visitor's email app
-with all the details pre-filled — no backend, database, or API key required.
-
-To choose which address receives registrations, edit **one line** at the top of
-`js/app.js`:
+The form opens the visitor's email app with all details pre-filled — no backend,
+database, or API key required. To choose which address receives registrations,
+edit **one line** near the bottom of `js/main.js`:
 
 ```js
 var RECIPIENT_EMAIL = "registrations@example.com"; // <- change this
@@ -57,9 +60,10 @@ new message addressed to that email; they just press **Send**.
 
 ## Notes
 
-- Third-party libraries (Bootstrap 3.3.7, jQuery 1.12.4) are **vendored locally**
-  under `js/vendor/`, `css/vendor/`, and `css/fonts/`, so the site has no
-  external runtime dependency and won't break if a CDN is unreachable.
-- Firebase (used only by the optional registration form) still loads from its
-  CDN and degrades gracefully if unavailable.
-- Images are compressed and capped at 1600px wide for fast loading.
+- **Fonts:** Noto Serif Ethiopic (headings) and Noto Sans Ethiopic (body) are
+  self-hosted from the `@fontsource` packages, split by `unicode-range` so the
+  browser only downloads the subset a page actually needs.
+- **Accessibility:** semantic landmarks, labelled form fields, a skip link,
+  visible focus rings, `aria-live` form status, and reduced-motion support.
+- **Performance:** images are compressed and capped at 1600px; scroll reveals
+  are a progressive enhancement that only activate when JS is present.
