@@ -27,11 +27,11 @@ $(function () {
   });
 
   // Scrollspy
-  $('body').scrollspy({ target: 'header.navbar', offset: topoffset });
+  $('body').scrollspy({ target: '.navbar-fixed-top', offset: topoffset });
 
   // Toggle the "inbody" nav style based on the active section
   function syncInbody() {
-    var hash = $('header.navbar').find('li.active a').attr('href');
+    var hash = $('.navbar-fixed-top').find('li.active a').attr('href');
     $('header nav').toggleClass('inbody', hash !== '#vision');
   }
   syncInbody();
